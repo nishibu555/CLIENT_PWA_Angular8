@@ -1,0 +1,38 @@
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    }
+ion-content{
+    --background: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+}
+ion-card{
+    background: rgb(235, 255, 255);
+}
+
+ion-header:after{
+    display: none
+ }
+.portfolioCoverImage{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 70vh;
+    background-image: url('http://completecarrepair.net/wp-content/uploads/2019/01/testimonialswoodenbackground.jpg');
+    background-size: 100% 100%;
+    opacity: 0.8
+}
+
+.testimonialSlider{
+    position: absolute;
+    top: -30px;
+    background-color: white
+}
+
+
+    .img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin: auto
+    }

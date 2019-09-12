@@ -1,0 +1,73 @@
+ion-header:after{
+    display: none
+ }
+ 
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    }
+ion-content{
+    --background: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+}
+.contents{
+    margin-top: 60px;
+}
+
+.contactInfo1{
+    background-color: rgb(225, 254, 255);
+    margin: 0;
+    padding: 10%;
+}
+.contactInfo2{
+    background-color: rgb(151, 255, 186);
+    margin: 0;
+    padding: 10%;
+}
+
+.contactInfo3{
+    background-color: transparent;
+    margin: 0;
+}
+.contactInfo4{
+    position: relative;
+
+    small{
+        position: absolute;
+        bottom: 0;
+    }
+}
+.title1{
+    text-align: center;
+    margin-bottom:30px
+}
+.rows{
+    margin-bottom: 80px;
+}
+
+ion-item{
+    margin: 5px;
+    background: transparent
+}
+
+.item{
+    box-shadow: 2px 2px 2px 2px rgb(224, 223, 223);
+    border-radius: 25px;
+    background-color: white;
+}
+
+.button{
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top:10px;
+    border-radius:25px;
+    background-color: rgb(225, 254, 255);
+
+}
+
+.button:hover{
+    cursor: pointer;
+    letter-spacing: 3px;
+    transition: 0.1s ease-in-out
+}

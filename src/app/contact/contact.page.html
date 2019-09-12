@@ -1,0 +1,73 @@
+<ion-header class="ion-no-padding" no-shadow>
+    <ion-toolbar>
+        <ion-title>
+            <img src="../assets/logo.jpg">
+        </ion-title>
+        <small style="margin-left: 25px; color:gray">Pioner in creative design</small>
+        <ion-buttons slot="end">
+            <ion-button (click)="openMenu()"><img src="https://img.icons8.com/material-sharp/24/000000/menu.png" style="margin-right:20px"></ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen class="ion-no-padding ">
+  <ion-row class="ion-no-padding" class="contents">
+      <ion-col size-md="8" offset-md="2" class="ion-no-padding">
+
+        <ion-row justify-content-center class="rows">
+          <ion-col size-md="8" size-sm="10" size-xs="12" >
+            <div class="title1">
+              <h1>This is full of
+                  ideas & creative power</h1>
+              <small>Where we seek the perfect balance
+                  between ideas & designs.</small>
+            </div>
+          </ion-col>
+          <ion-col size-md="6" size-sm="10" size-xs="12" class="contactInfo1">
+            <div >
+              <h4>Our Cave</h4>
+              <p>{{contactUs.location}}<br>{{contactUs.phone}}<br>{{contactUs.email}}</p>
+   
+            </div>
+          </ion-col>
+          <ion-col size-md="6" size-sm="10" size-xs="12" class="contactInfo2">
+            <div>
+                <span><img src="https://img.icons8.com/cotton/50/000000/taxi-location.png"></span> 
+              <h1>Find Us From Google</h1>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row justify-content-center class="rows">
+            <ion-col size-md="8" size-sm="10" size-xs="12" >
+              <div class="title1">
+                <img src="https://img.icons8.com/dusk/64/000000/send-file.png">
+                <h1>Fell  free to contact us</h1>
+                <small>Send your query</small>
+              </div>
+            </ion-col>
+            <ion-col size-md="6" size-sm="10" size-xs="12" class="contactInfo3">
+              <div style="text-align: center">
+                  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                      <ion-item lines="none" class="item">
+                        <ion-input placeholder="Your Fullname" ngModel name="name">
+                        </ion-input>
+                      </ion-item>
+                      <ion-item lines="none" class="item">
+                        <ion-input placeholder="Your E-mail Address"  ngModel name="email"></ion-input>
+                      </ion-item>
+                      <ion-item lines="none">
+                          <ion-textarea rows="3" placeholder="Your Message"  ngModel name="message"></ion-textarea>
+                      </ion-item>
+                      <ion-button type="submit" color="light">Send</ion-button>
+                  </form> 
+              </div>
+            </ion-col>
+        </ion-row>
+        
+      </ion-col>
+  </ion-row>
+</ion-content>
+
+                      <!-- <p  type="submit" class="button">Send mail</p> -->

@@ -1,0 +1,72 @@
+<ion-header class="ion-no-padding" no-shadow>
+    <ion-toolbar>
+        <ion-title>
+            <img src="../assets/logo.jpg">
+        </ion-title>
+        <small style="margin-left: 25px; color:gray">Pioner in creative design</small>
+        <ion-buttons slot="end">
+            <ion-button (click)="openMenu()"><img src="https://img.icons8.com/material-sharp/24/000000/menu.png" style="margin-right:20px"></ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding" fullscreen>
+
+<!-- menu -->
+<app-menu *ngIf="isMenuOpen"></app-menu>
+<!-- menu -->
+
+
+  <ion-row class="ion-no-padding">
+     <ion-col size="12" class="ion-no-padding">
+       <div class="portfolioCoverImage">
+         <!-- <img class="portfolioCoverImage"  src="https://www.vactualpapers.com/wallpapers/creative-design-graphics-and-photography-hd-wallpaper-35/download/3840x2160.jpg"> -->
+       </div>
+     </ion-col>
+  </ion-row>
+
+    <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <div class="title1">
+            <h1>We Explore Creativity</h1>
+            <p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+               when an unknown printer took a galley of type </p>
+          </div>
+        </ion-col>
+    </ion-row>
+   
+    <ion-row class="ion-no-padding">
+      <ion-col size-md="8" offset-md="2" size-sm="10" offset-sm="1" size-xs="12">
+        
+        <ion-row justify-content-end style="margin-bottom: 20px ">
+           <ion-col size="2">
+             <small (click)="onShowAll()" class="showAll">SHOW ALL</small>
+           </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col 
+            size-md="6" size-sm="6" size-xs="12" 
+            class="ion-no-padding portfolioImage"
+            style="padding: 3px" *ngFor="let image of portfolioImage">
+                <div class="portfolioImage">
+                    <ion-img src="{{'http://localhost/ci_mini/assets/uploads/portfolio/main/' + image.image}}"></ion-img>
+                    
+                    <div class="overlay" routerLink="/portfolio-detail/{{image.portfolio_id}}">
+                      <div class="overlayTitle">
+                        <h5 [@fadeInLeft]="state" (@fadeInLeft.done)="end()">Lorem Ipsum </h5>
+                      </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 100px">
+      <ion-col size="10" offset="1">
+        <app-footer></app-footer>
+      </ion-col>
+    </ion-row>
+
+</ion-content>
+

@@ -1,0 +1,48 @@
+<ion-header class="ion-no-padding">
+    <ion-toolbar>
+        <ion-title>
+            <img src="../assets/logo.jpg">
+        </ion-title>
+        <small style="margin-left: 25px; color:gray">Pioner in creative design</small>
+        <ion-buttons slot="end">
+            <ion-button (click)="openMenu()"><img src="https://img.icons8.com/material-sharp/24/000000/menu.png"></ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-no-padding ">
+
+  <!-- menu -->
+  <app-menu *ngIf="isMenuOpen"></app-menu>
+  <!-- menu -->
+  
+
+  <ion-row class="ion-no-padding" class="contents">
+      <ion-col size-md="8" offset-md="2" class="ion-no-padding">
+        <ion-row *ngFor="let about of about" class="ion-justify-content-center">
+           <ion-col  size="8">
+             <div style="text-align: center">
+                <h1>{{about.title}}</h1>
+             </div>
+           </ion-col>
+          <ion-col size="12">
+              <div style="text-align: justify; margin-bottom: 50px">
+                  <p>{{about.content}}</p>
+              </div>
+              <div>
+                  <ion-img src="http://localhost/ci_mini/assets/uploads/pages/{{about.image}}"></ion-img>
+              </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+  </ion-row>
+
+  
+  
+  <ion-row style="margin-top: 100px">
+      <ion-col size="10" offset="1">
+        <app-footer></app-footer>
+      </ion-col>
+  </ion-row>
+
+</ion-content>

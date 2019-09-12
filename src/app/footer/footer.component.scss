@@ -1,0 +1,45 @@
+.outerProgressbar{
+    height: 3px;
+    width: 100%;
+    background-color: rgb(233, 227, 227);
+    border-radius: 15%;
+  }
+  
+  .innerProgressbar{
+    height: 2.7px;
+    width: 0%;
+    background-color: rgb(143, 146, 146);
+    border-radius: 15%;
+  }
+  
+  .contactUs{
+    line-height: 1;
+    padding-left: 10px;
+    padding-top: 50px;
+
+    p{
+      color: gray;
+      line-height: 0.5;
+      position: relative;
+    }
+
+    .p2{
+      font-size: 20px;
+      font-weight: 400;
+      color: rgb(31, 30, 30)
+    }
+
+    span{
+     position: absolute;
+     bottom: 0;
+     left: 100px;
+    }
+  }
+
+  .contactUs:hover{
+    .p2{
+      color: black
+    }
+  }
+
+  

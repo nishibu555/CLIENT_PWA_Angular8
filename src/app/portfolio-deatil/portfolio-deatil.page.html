@@ -20,7 +20,7 @@
     <ion-row class="ion-no-padding">
        <ion-col size="12" class="ion-no-padding">
          <div class="portfolioCoverImage">
-            <img src="http://localhost/ci_mini/assets/uploads/portfolio/main/{{topImage}}" class="image-responsive img">
+            <img src="http://aptest.therssoftware.com/pwa_backend/assets/uploads/portfolio/main/original_{{topImage}}" class="image-responsive img">
          </div>
        </ion-col>
     </ion-row>
@@ -60,16 +60,20 @@
 
      
      <ion-row style="margin-top: 50px">
-        <ion-col size-md="10" offset-md="1"  size-lg="8" offset-lg="2"class="ion-no-padding">
-          <img src="http://localhost/ci_mini/assets/uploads/portfolio/main/{{topImage}}" class="image-responsive portfolioMainImage">
+        <ion-col size-md="8" offset-md="2"  size-lg="6" offset-lg="3"class="ion-no-padding">
+          <img src="{{clickedSlidingImage}}" 
+          class="image-responsive portfolioMainImage" *ngIf="clickedSlidingImage">
+
+          <img src="http://aptest.therssoftware.com/pwa_backend/assets/uploads/portfolio/main/{{topImage}}" 
+          class="image-responsive portfolioMainImage" *ngIf="!clickedSlidingImage">
         </ion-col>
      </ion-row>
      <ion-row >
-        <ion-col size-md="10" offset-md="1"  size-lg="8" offset-lg="2"class="ion-no-padding">
+        <ion-col size-md="8" offset-md="2"  size-lg="6" offset-lg="3"class="ion-no-padding">
               <ion-slides pager="true" [options]="slideOpts">
                   <ion-slide *ngFor="let image of portfolioSlidingImage" imageViewer>
                       <div style="padding: 5px">
-                        <img src="http://localhost/ci_mini/assets/uploads/portfolio/secondary/{{image.image}}" class="portfolioSlidingImage"> 
+                          <img (click)="onSecondaryImage(image)" src="{{image}}" class="portfolioSlidingImage"> 
                       </div>
                   </ion-slide>
               </ion-slides>

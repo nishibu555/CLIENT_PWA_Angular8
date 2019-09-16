@@ -18,14 +18,12 @@ ion-header:after{
     margin: 0;
     width: 100vw;
     height: 70vh;
-    background-image: url('https://www.innofied.com/wp-content/uploads/2015/12/app-trends1.jpg');
-    background-size: 100% 100%;
-    opacity: 0.8
+   // background-image: url('https://static.wixstatic.com/media/efa2f0_90c0d7cd70fc44078835812a826cbf15~mv2_d_2600_1497_s_2.jpg');
+  //  background-size: 100% 100%;
 }
 
 
 .portfolioImage{
-
     position: relative;
 }
 
@@ -33,7 +31,7 @@ ion-header:after{
     position: absolute;
     top: 0;
     left: 0;
-    height: 99%;
+    height: 100%;
     width: 100%;
     background-color: rgb(56, 143, 110);
     opacity: 0.7;
@@ -44,17 +42,26 @@ ion-header:after{
     position: absolute;
     top: 0;
     left: 0;
-    height: 99%;
+    height: 100%;
     width: 100%;
     opacity: 0;
+    cursor: pointer;
 
     .overlayTitle{
         position: absolute;
-        bottom: 10%;
-        left: 5%;
+        text-align: center;
+        width: 90%;
+        left:5%;
+        top: 20%;
         color: white;
-        line-height: 0;
+        line-height: 0.5;
+
+        .overlaySubTitle{
+            color: white;
+            opacity: 0;
+        }
     }
+   
 }
 
 

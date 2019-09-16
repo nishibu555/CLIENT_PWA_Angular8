@@ -12,9 +12,11 @@ export class AboutPage implements OnInit {
   isMenuOpen=false;
   about:any=[];
 
-  constructor(private service: DataService,public events: Events) { }
+  constructor(public title: Title,private service: DataService,public events: Events) { }
 
   ngOnInit() {
+    
+    this.title.setTitle("WyMo-Contact");
     this.service.getAbouUs().subscribe(res=>{
      console.log(res)
      this.about=res;

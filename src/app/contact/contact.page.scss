@@ -7,6 +7,10 @@ ion-content{
     --background: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
 }
+ion-header:after{
+    display: none
+}
+
 .contents{
     margin-top: 60px;
 }
@@ -19,7 +23,7 @@ ion-content{
 .contactInfo2{
     background-color: rgb(151, 255, 186);
     margin: 0;
-    padding: 10%;
+    padding: 0%;
 }
 
 .contactInfo3{
@@ -34,6 +38,41 @@ ion-content{
         bottom: 0;
     }
 }
+
+.contactInfo5{
+    background-color: rgb(225, 254, 255);
+    margin: 0;
+    padding: 5% 10%;
+    color: rgb(58, 57, 57);
+    min-height: 250px;
+}
+
+.joinUs{
+    border: 2px solid  transparent;
+    padding: 5px;
+    p{
+        color: rgb(5, 100, 80);
+    
+    }
+  small{
+    color:rgb(5, 100, 80);
+  }
+}
+
+.joinUs:hover{
+    border: 2px solid rgb(151, 255, 186);
+    cursor: pointer;
+    p{
+     color: black;
+        
+    }
+   .arrow{
+       position: absolute;
+       transform: translateX(10px);
+       transition: 0.3s ease-in-out
+   }
+}
+
 .title1{
     text-align: center;
     margin-bottom:30px
@@ -44,30 +83,52 @@ ion-content{
 
 ion-item{
     margin: 5px;
-    background: transparent
-}
-ion-header:after{
-    display: none
- }
-
-.item{
-    box-shadow: 2px 2px 2px 2px rgb(224, 223, 223);
-    border-radius: 25px;
-    background-color: white;
 }
 
-// .button{
-//     padding: 10px;
-//     margin-left: 20%;
-//     margin-right: 20%;
-//     margin-top:10px;
-//     border-radius:25px;
-//   //  background-color: rgb(225, 254, 255);
+ion-input{
+    background-color: transparent;
+    font-size: 15px;
+    padding: 0;
+    border-bottom: 1px solid rgb(42, 199, 165);
+    color: rgb(5, 100, 80);
+    text-align: left;
+    letter-spacing: 2px;
+    margin-bottom: 10px
+}
+ion-textarea{
+    background-color: transparent;
+    border-bottom: 1px solid rgb(42, 199, 165);
+    color: rgb(5, 100, 80);
+    text-align: left;
+    font-size: 15px;
+    padding: 0;
+    letter-spacing: 2px;
+}
 
-// }
 
-.button:hover{
+
+
+
+.img{
+    margin-right: 30px;
+    margin-bottom: 10px
+}
+
+.img:hover{
     cursor: pointer;
-    letter-spacing: 3px;
-    transition: 0.1s ease-in-out
+}
+
+.submit{
+  color: rgb(5, 100, 80);
+  font-weight: 500;
+  padding: 5px;
+  border: 1px solid rgb(42, 199, 165);
+  cursor: pointer;
+  margin: 20px 30%;
+  border-radius: 30px;
+}
+
+.submit:hover{
+    font-weight: 700;
+    transition: 0.2s ease-in-out
 }

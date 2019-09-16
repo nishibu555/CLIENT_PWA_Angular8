@@ -1,5 +1,6 @@
 import { Component, ViewChild,ElementRef, OnInit } from '@angular/core';
 import { IonicHeaderParallaxModule } from 'ionic-header-parallax';
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 import {
   trigger,
   state,
@@ -11,6 +12,7 @@ import {
 import { fadeInLeft, flip, fadeInRight, fadeInUp} from 'ng-animate';
 import { DataService } from '../data.service';
 import { Events } from '@ionic/angular';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -39,14 +41,16 @@ export class HomePage implements OnInit{
 
   isMenuOpen=false;
 
-  images:any=[];
+  imageData:any=[];
 
-  imageSources:any=[
-   'https://cdn.dribbble.com/users/3272371/screenshots/6808066/folded_business_card_mockup_3_2x.jpg']
+   coverImageSource:any=[
+
+   ]
   
    state='start'
    
   @ViewChild('menu', {static: false}) menu: ElementRef;
+
   contactUs={
     id:null,
     phone:null,
@@ -54,24 +58,38 @@ export class HomePage implements OnInit{
     email:null,
     location: null
   }
-  constructor(private service: DataService, public events: Events) {}
+  constructor(private scrollToService: ScrollToService,private service: DataService, public events: Events,public meta: Meta, public title: Title) {}
   
   ngOnInit(){
+
+    this.title.setTitle("WyMo-An award winning agency");
+    
+    //this.meta.addTag({name: 'keywords', content: 'Angular Project, Create Angular'});
+
     this.service.getContactUs().subscribe(res=>{
       this.contactUs=res['0'];
      })
 
      this.service.getHomeCoverImage().subscribe(res=>{
-      this.images=res;
-      for(let i=0; i<this.images.length; i++){
-          this.imageSources.push(res[i].title);
+       this.imageData=res;
+       let temp;
+       for(let i=0; i<this.imageData.length; i++){
+         temp="http://aptest.therssoftware.com/pwa_backend/assets/cover/"+this.imageData[i].image
+         this.coverImageSource.push( temp);
        }
-     
-      console.log(this.imageSources)
+       console.log(this.coverImageSource);
      })
   }
 
- 
+  public triggerScrollToOffsetOnly(offset) {
+    
+    const config: ScrollToConfigOptions = {
+      offset
+    };
+
+    this.scrollToService.scrollTo(config);
+  }
+
   openMenu(){
     this.isMenuOpen=true;
     this.events.publish('isMenuOpen', true);

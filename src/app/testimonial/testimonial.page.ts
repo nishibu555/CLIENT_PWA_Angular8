@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Events } from '@ionic/angular';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-testimonial',
@@ -12,19 +13,27 @@ export class TestimonialPage implements OnInit {
   slideOpts = {
     speed: 400,
   };
-
+  coverImageData:any={}
  
   allTestimonial:any=[];
 
-  constructor(private service: DataService, private events: Events) { }
+  constructor(public title: Title,private service: DataService, private events: Events) { }
 
   ngOnInit() {
+    
+    this.title.setTitle("WyMo-testimonial");
+
     this.service.getAllTestimonial().subscribe(res=>{
       this.allTestimonial=res;
-      console.log( this.allTestimonial)
+      (this.allTestimonial)
+    });
+
+    this.service.getTestimonialCoverImage().subscribe(res=>{
+      this.coverImageData = res;
+      console.log(this.coverImageData.image);
     })
   }
-  openMenu(){
+   openMenu(){
     this.isMenuOpen=true;
     this.events.publish('isMenuOpen', true);
     this.events.subscribe('isMenuOpen', (res) => {

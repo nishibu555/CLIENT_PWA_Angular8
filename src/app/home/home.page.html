@@ -12,35 +12,49 @@
 
 <ion-content class="ion-no-padding" fullscreen>
 <ion-row class="ion-no-padding">
-  
-<!-- menu -->
-    <app-menu *ngIf="isMenuOpen"></app-menu>
-<!-- menu -->
+    
+    <!-- menu -->
+        <app-menu *ngIf="isMenuOpen"></app-menu>
+    <!-- menu -->
 
 
-   <ion-col size="12" class="ion-no-padding">
-      <ion-row class="titleRow">
-          <ion-col>
-              <div >
-                  <h1 [@fadeInLeft]="fadeInLeft">Explore Creativity</h1>
-                  <p  [@fadeInRight]="fadeInRight">Your trusted partner to inovative works</p>
-              </div> 
-              <p class="button" routerLink="/portfolio">See Our Work</p>
-          </ion-col>
-      </ion-row>
-   </ion-col>
+    <ion-col size="12" class="ion-no-padding">
+        <ion-row class="titleRow">
+            <ion-col>
+                <div>
+                    <h1 [@fadeInLeft]="fadeInLeft">Explore Creativity</h1>
+                    <p  [@fadeInRight]="fadeInRight">Your trusted partner to inovative works</p>
+                </div> 
+                <p class="button" routerLink="/portfolio">See Our Work</p>
+            </ion-col>
+        </ion-row>
+        <ion-row class="scrolMoreRow">
+            <ion-col>
+                <ion-button (click)="triggerScrollToOffsetOnly(200)">See more</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-col>
     
 
-   <ion-col size="12" class="ion-no-padding">
-      <slideshow 
-      [minHeight]="'100vh'"
-      [autoPlay]="true"
-      [showArrows]="false"
-      [imageUrls]="imageSources"
-      [lazyLoad]="imageSources?.length > 1"
-      [autoPlayWaitForLazyLoad]="true">
-     </slideshow>
-   </ion-col>
+    <ion-col size="12" class="ion-no-padding">
+        <slideshow 
+        [minHeight]="'100vh'"
+        [autoPlay]="true"
+        [showArrows]="false"
+        [imageUrls]="coverImageSource"
+        [lazyLoad]="coverImageSource?.length > 0"
+        [autoPlayWaitForLazyLoad]="true">
+        </slideshow>
+    </ion-col>
+
+    <ion-col size="12" style="margin-top: 100px ">
+        <ion-row>
+            <ion-col>
+                <h1>Main</h1>
+                <div id="destination" #destinationRef></div>
+            </ion-col>
+        </ion-row>
+    </ion-col>
 </ion-row>
 </ion-content>
 

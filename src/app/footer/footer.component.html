@@ -1,11 +1,11 @@
 <ion-row justify-content-center>
-    <ion-col size="12">
+    <ion-col size="12" style="margin-bottom: 30px">
         <div style="text-align: center">
             <h1>Quick contact</h1>
-            <p>We can give you a fast response via email, phone call or skype.</p>
+            <small class="letter-space" style="color:rgb(31, 30, 30); ">We response via email, phone call or skype.</small>
         </div>
     </ion-col>
-    <ion-col size-md="12">
+    <ion-col size-md="10">
       <div class="outerProgressbar" >
         <div class="innerProgressbar" [@progressBar]=progress (@progressBar.done)="endProgress()">
         </div>
@@ -16,17 +16,17 @@
   <ion-row justify-content-center>
      <ion-col size-md="10" size-sm="12">
        <ion-row justify-content-center>
-          <ion-col size-xs="10" size-sm="10" size-md="4" class="contactUs">
-               <p>For inquiry<span><img src="https://img.icons8.com/cotton/64/000000/email-open.png"></span> </p>
-                <p class="p2">{{contactUs.email}}</p>
+          <ion-col size-xs="10" size-sm="8" size-md="4" class="contactUs">
+               <small class="letter-space">For inquiry<img src="../assets/mail.png" class="img"></small>
+                <p>{{contactUs.email}}</p>
           </ion-col>
-          <ion-col size-xs="10" size-sm="10" size-md="4" class="contactUs">
-                <p>Call us on<span><img src="https://img.icons8.com/wired/64/000000/cell-phone.png"></span></p>
-                <p class="p2">{{contactUs.phone}}</p>
+          <ion-col size-xs="10" size-sm="8" size-md="4" class="contactUs">
+                <small class="letter-space">Call us on<img src="../assets/phone.png" class="img"></small>
+                <p>{{contactUs.phone}}</p>
           </ion-col>
-          <ion-col size-xs="10" size-sm="10" size-md="4" class="contactUs">
-                <p>Address<span><img src="https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png"></span></p>
-                <p class="p2">{{contactUs.location}}</p>
+          <ion-col size-xs="10" size-sm="8" size-md="4" class="contactUs">
+                <small class="letter-space">Address<img src="../assets/home.png" class="img"></small>
+                <p>{{contactUs.location}}</p>
           </ion-col>   
        </ion-row>
       </ion-col>

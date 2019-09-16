@@ -105,21 +105,34 @@ ion-content{
     margin-top: 50vh;
     margin-left: 5vw;
     h1{
-        color: rgb(53, 52, 52);
+        color: rgb(206, 203, 203);
+        letter-spacing: 2px;
         font-weight: 600;
     }
     p{
-        color: rgb(77, 74, 74)
+        color: rgb(206, 203, 203);
     }
     .button{
         padding: 10px;
         text-align: center;
         width: 150px;
         border: 2px solid gray;
-        color: rgb(104, 104, 104);
+        color: rgb(206, 203, 203);
         border-radius: 20px;
     }
     .button:hover{
         border: 2px solid white;
+        cursor: pointer;
     }
+
 }
+
+.scrolMoreRow{
+    color: rgb(175, 175, 175);
+    position: absolute;
+    top: 85vh;
+    right: 10vw;
+    cursor: pointer;
+    letter-spacing: 3px;
+    z-index: 500;
+  }

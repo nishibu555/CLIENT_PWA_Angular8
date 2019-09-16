@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild,ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -65,7 +66,8 @@ export class MenuComponent implements OnInit {
   @ViewChild('menu', {static: false}) menu: ElementRef;
  
 
-  constructor(private service: DataService,public events: Events) { }
+  constructor(
+    private router: Router,private service: DataService,public events: Events) { }
 
   ngOnInit() {
      
@@ -73,6 +75,18 @@ export class MenuComponent implements OnInit {
     this.service.getContactUs().subscribe(res=>{
       this.contactUs=res['0'];
      })
+  }
+  onContact(){
+    this.router.navigateByUrl('/contact'); 
+  }
+  onPortfolio(){
+    this.router.navigateByUrl('/portfolio'); 
+  }
+  onAbout(){
+    this.router.navigateByUrl('/about'); 
+  }
+  onTestimonial(){
+    this.router.navigateByUrl('/testimonial'); 
   }
 
   closeMenu(){

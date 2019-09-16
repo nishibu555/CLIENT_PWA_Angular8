@@ -15,13 +15,19 @@
 <!-- menu -->
 <app-menu *ngIf="isMenuOpen"></app-menu>
 <!-- menu -->
-
+<div text-center>
+    <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
+</div>
 
   <ion-row class="ion-no-padding">
      <ion-col size="12" class="ion-no-padding">
        <div class="portfolioCoverImage">
-         <!-- <img class="portfolioCoverImage"  src="https://www.vactualpapers.com/wallpapers/creative-design-graphics-and-photography-hd-wallpaper-35/download/3840x2160.jpg"> -->
-       </div>
+         <img class="portfolioCoverImage"  src="{{'http://aptest.therssoftware.com/pwa_backend/assets/cover/'+ coverImageData.image}}">
+         <div  [@fadeInDown]="fadeInDown" style=" position: absolute; top: 50px; width: 30%;left:35%; text-align: center;">
+          <h1 style="letter-spacing: 3px; color: rgb(73, 71, 71);">Explore Creativity</h1>
+          <small>Lorem Ipsum has been the industry's</small>
+         </div>
+        </div> 
      </ion-col>
   </ion-row>
 
@@ -47,14 +53,16 @@
             <ion-col 
             size-md="6" size-sm="6" size-xs="12" 
             class="ion-no-padding portfolioImage"
-            style="padding: 3px" *ngFor="let image of portfolioImage">
-                <div class="portfolioImage">
-                    <ion-img src="{{'http://localhost/ci_mini/assets/uploads/portfolio/main/' + image.image}}"></ion-img>
-                    
+            *ngFor="let image of portfolioImage">
+                <div class="portfolioImage" (mouseenter)="startFadeInDown()">
+                    <ion-img src="{{'http://aptest.therssoftware.com/pwa_backend/assets/uploads/portfolio/main/' + image.image}}"></ion-img>
                     <div class="overlay" routerLink="/portfolio-detail/{{image.portfolio_id}}">
-                      <div class="overlayTitle">
-                        <h5 [@fadeInLeft]="state" (@fadeInLeft.done)="end()">Lorem Ipsum </h5>
-                      </div>
+                        <div class="overlayTitle" [@FadeInDown]="state" (@FadeInDown.done)="endSate()">
+                          <h5>{{image.title}}</h5>
+                          <small class="overlaySubTitle" [@FadeInSpacing]="stateFadeInSpacing" (@FadeInSpacing.done)="endFadeInSpacing()">
+                            Made with {{image.technology}}
+                          </small>
+                        </div>
                     </div>
                 </div>
             </ion-col>

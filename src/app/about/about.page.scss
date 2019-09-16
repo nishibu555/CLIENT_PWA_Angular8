@@ -1,7 +1,4 @@
-ion-header:after{
-    display: none
- }
- 
+
 ion-toolbar {
     --background: transparent;
     --ion-color-base: transparent !important;
@@ -10,6 +7,10 @@ ion-content{
     --background: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
 }
+ion-header:after{
+    display: none
+}
+
 .contents{
     margin-top: 60px;
 }

@@ -6,9 +6,10 @@ import { RouterModule } from '@angular/router';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { HomePage } from './home.page';
 import { MenuModule } from '../menu/menu.module';
-
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 @NgModule({
   imports: [
+    ScrollToModule.forRoot(),
     MenuModule,
     SlideshowModule,
     CommonModule,

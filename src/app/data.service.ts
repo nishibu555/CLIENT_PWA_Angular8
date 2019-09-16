@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
-  apiLink='http://localhost/ci_mini/APi/Api/';
+  apiLink='http://aptest.therssoftware.com/pwa_backend/Api/Api/';
 
   constructor(private http: HttpClient) { }
 
@@ -22,16 +24,22 @@ export class DataService {
     );
   }
 
+  getHomeCoverImage(){
+    return this.http.get<any>(`${this.apiLink}?action=home-cover-image`);
+  }
+
+  getTestimonialCoverImage(){
+    return this.http.get(`${this.apiLink}?action=testimonial-cover-image`);
+  }
+
+  getPortfolioCoverImage(){
+    return this.http.get(`${this.apiLink}?action=portfolio-cover-image`);
+  }
+
+  
   getAllPortfolioImage(){
     return this.http.get(`${this.apiLink}?action=all-portfolio-image`);
-  }
-
-
-  getHomeCoverImage(){
-    return this.http.get(`${this.apiLink}?action=all-home-cover-image`);
-  }
-
-
+  } 
 
   getAbouUs(){
     return this.http.get<any>(`${this.apiLink}?action=about-us`);

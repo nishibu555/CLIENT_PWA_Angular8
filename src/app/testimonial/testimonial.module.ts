@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TestimonialPage } from './testimonial.page';
 import { FooterModule } from '../footer/footer.module';
+import { MenuModule } from '../menu/menu.module';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    MenuModule,
     FooterModule,
     CommonModule,
     FormsModule,
